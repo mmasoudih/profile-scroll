@@ -4,6 +4,10 @@ getProfile()
         let user = profile.next().value;
         showProfile(user);
         document.querySelector('button').addEventListener('click',e=>{
+            showLoading();
+            setTimeout(()=>{
+                hideLoading();
+            },1500);
             user = profile.next().value;
             if(user !== undefined){
                 showProfile(user);
